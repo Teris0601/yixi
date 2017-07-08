@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: grey;
+            height: 3000px;
+        }
+        
+        .returnTop {
+            width: 61px;
+            height: 99px;
+            position: fixed;
+            right: 10px;
+            bottom: 30px;
+            background: yellowgreen;
+            display: none;
+            text-align: center;
+            color: yellow;
+            line-height: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="returnTop" id="returnTop">Top</div>
+</body>
+
+<script>
+    function reTop() {
+        var toTop = document.getElementById("returnTop");
+        toTop.onclick = function() {
+            scrollAnimate(0, 1000);
+            // this.style.backgroundPosition = "-120px,0";
+        }
+
+        window.onscroll = function() {
+            var st = document.body.scrollTop ||
+
+                document.documentElement.scrollTop;
+            if (st > 1000) {
+                toTop.style.display = "block";
+            } else {
+                toTop.style.display = "none";
+            }
+
+        }
+
+        function scrollAnimate(target, time) {
+            var frameNumber = 0; //帧编号
+            //start当前卷动值的位置，是起点；
+            var start = document.body.scrollTop ||
+
+                document.documentElement.scrollTop;
+            var distance = target - start;
+            var interval = 10;
+            var maxFrame = time / interval;
+            clearInterval(timer);
+            var timer = setInterval(function() {
+                frameNumber++;
+                if (frameNumber == maxFrame) {
+                    clearInterval(timer);
+                }
+                // t,b,c,d
+                // 第一个参数t代表当前帧编号
+                // 第二个参数b代表当前起始位置
+                // 第三个参数c代表当前变化量
+                // 第四个参数d代表当前总帧数
+
+
+                document.body.scrollTop = document.documentElement.scrollTop = Tween.Expo.easeInOu
+
+                t(frameNumber, start, distance, maxFrame);
+            }, interval)
+        }
+
+
+    }
+    reTop();
+</script>
+
+</html>

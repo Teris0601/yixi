@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="" href="../../swiper/css/swiper.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        html {
+            font-size: 12px;
+            font-family: 微软雅黑;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        @media all and (min-width:1024px) and (max-width:1199px) {
+            .box {
+                background: black;
+            }
+        }
+        
+        @media all and (min-width:768px) and (max-width:1023px) {
+            .box {
+                background: orange;
+            }
+        }
+        
+        @media all and (min-width:400px) and (max-width:767px) {
+            .box {
+                background: yellow;
+            }
+        }
+        
+        @media all and (min-width:321px) and (max-width:399px) {
+            .box {
+                background: pink;
+            }
+        }
+        
+        @media all and (min-width:220px) and (max-width:320px) {
+            .box {
+                background: green;
+            }
+        }
+        
+        @media all and (max-width:219px) {
+            .box {
+                background: grey;
+            }
+        }
+        
+        #header {
+            width: 100%;
+            background-color: #444444;
+            position: relative;
+        }
+        
+        .left {
+            float: left;
+        }
+        
+        .right {
+            float: right;
+        }
+        
+        .log {
+            margin: 4% 0 0 1.5%;
+        }
+        
+        .log img {
+            width: 5.5rem;
+            height: 2rem;
+        }
+        
+        .menu {
+            height: 100%;
+            width: 10%;
+            position: relative;
+        }
+        
+        .menu img {
+            position: absolute;
+            top: 25%;
+            left: 0;
+        }
+        
+        #menu-content {
+            background-color: #444444;
+            /*position: absolute;*/
+            left: 0;
+            display: none;
+            z-index: 222222;
+            /*height: 20rem;*/
+            float: left;
+        }
+        
+        #menuSearch {
+            width: 80%;
+            height: 40%;
+            margin: 0 0 0 10%;
+        }
+        
+        #menuUl li {
+            border-bottom: 1px #0f0f0f solid;
+        }
+        
+        #menuUl li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: white;
+            line-height: 350%;
+        }
+        
+        #menuUl li a:hover {
+            background-color: red;
+        }
+        
+        #menuUl li:nth-child(8) {
+            border-bottom: none;
+        }
+        
+        #menuUl li:nth-child(9) {
+            border-bottom: none;
+            width: 80%;
+            height: 100%;
+            margin: 0 0 0 10%;
+            background-color: grey;
+        }
+        
+        #menuImg {
+            position: absolute;
+            right: 10.2%;
+        }
+        
+        #menuRe {
+            display: none;
+        }
+        
+        #banner {
+            width: 100%;
+            height: 40rem;
+            float: left;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .banImg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .banImg li {
+            width: 100%;
+            height: 100%;
+            float: left;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .banList {
+            width: 50%;
+            height: 10%;
+            position: absolute;
+            left: 25%;
+            top: 90%;
+        }
+        
+        .banList li {
+            float: left;
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 50%;
+            background-color: white;
+            margin: 0 6%;
+        }
+        
+        .banImg li:nth-child(1) {
+            background: url("img/b1.jpg");
+            background-size: cover;
+        }
+        
+        .banImg li:nth-child(2) {
+            background: url("img/b2.jpg");
+            background-size: cover;
+        }
+        
+        .banImg li:nth-child(3) {
+            background: url("img/b3.jpg");
+            background-size: cover;
+        }
+        
+        .banImg li:nth-child(4) {
+            background: url("img/b4.jpg");
+            background-size: cover;
+        }
+        
+        .banImg li:nth-child(5) {
+            background: url("img/b5.jpg");
+            background-size: cover;
+        }
+        
+        .banImg li:nth-child(6) {
+            background: url("img/b6.jpg");
+            background-size: cover;
+        }
+        
+        .banImgcon {
+            width: 80%;
+            height: 50%;
+            position: absolute;
+            left: 10%;
+            top: 20%;
+            background-color: black;
+            border: 1px solid white;
+            opacity: 0.6;
+        }
+        
+        .headPic {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            border: 1px solid white;
+            margin: 5% 0 0 40%;
+            opacity: 1;
+        }
+        
+        .headPic img {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+        }
+        
+        .banImgcon h2 {
+            color: white;
+            text-align: center;
+            margin: 1.5rem 0 0 0;
+            opacity: 1;
+        }
+        
+        .banImgcon p {
+            color: white;
+            text-align: center;
+        }
+        
+        .section {
+            width: 100%;
+            height: 200rem;
+            margin: 3rem 0 0 0;
+            float: left;
+        }
+        
+        .secTitle {
+            width: 80%;
+            height: 5rem;
+            margin-left: 10%;
+            border-bottom: 2px solid red;
+            border-top: 2px solid red;
+            text-align: center;
+            line-height: 450%;
+            color: red;
+            letter-spacing: 10px;
+        }
+        
+        .secContent {
+            width: 100%;
+        }
+        
+        .secContentUl li {
+            position: relative;
+        }
+        
+        .secContentUl li:nth-child(1) {
+            background: url("img/b1.jpg");
+            background-size: cover;
+            margin: 3rem 0 0 0;
+        }
+        
+        .secContentUl li:nth-child(2) {
+            background: url("img/b2.jpg");
+            background-size: cover;
+        }
+        
+        .secContentli {
+            width: 80%;
+            height: 30%;
+            margin: 20% 0 0 10%;
+            background-color: black;
+            border: 2px solid white;
+            box-shadow: 0 0 2px 2px white;
+            opacity: 0.4;
+        }
+        
+        .secContentTit {
+            width: 100%;
+            height: 30%;
+            text-align: center;
+            color: white;
+            position: absolute;
+            left: 0;
+            top: 45%;
+        }
+        
+        #secTitle1 h2 {
+            display: block;
+            width: 90%;
+            height: 4rem;
+            background-color: red;
+            color: white;
+            letter-spacing: 10px;
+            line-height: 250%;
+            text-align: center;
+            margin: 3rem 0 0 5%;
+        }
+        
+        #secTitle1 p {
+            display: block;
+            width: 90%;
+            margin-left: 5%;
+            font-size: 1.5rem;
+            line-height: 200%;
+            color: #5e5e60;
+        }
+        
+        #secTitle1 span {
+            font-size: 1.2rem;
+            margin-left: 55%;
+            color: #5e5e60;
+        }
+        
+        .newSpeech {
+            margin-top: 4rem;
+            width: 100%;
+        }
+        
+        .newSpeech ul {
+            width: 100%;
+        }
+        
+        .newSpeech ul li {
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 2rem;
+        }
+        
+        .newSpeech ul li img {
+            width: 100%;
+        }
+        
+        .newSpeech ul li h2 {
+            text-align: center;
+            color: red;
+        }
+        
+        .footer {
+            width: 100%;
+            background-color: #666666;
+        }
+        
+        .footerComment {
+            width: 100%;
+        }
+        
+        .footerCommentTit {
+            background: url("img/pl.png") no-repeat;
+            background-size: 24px 24px;
+            display: block;
+            width: 100%;
+            height: 2rem;
+            margin: 1rem 0 0 10%;
+            font-size: 14px;
+            line-height: 180%;
+            word-spacing: 2rem;
+            color: white;
+        }
+        
+        .footerCommentLine {
+            height: 1px;
+            width: 80%;
+            margin: 1rem 0 0 10%;
+            background-color: white;
+        }
+        
+        .headphoto {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+        
+        .footerComment1 {
+            width: 80%;
+            margin: 10px 0 0 10%;
+        }
+        
+        .footerComment1 p {
+            word-spacing: 10px;
+            display: block;
+            color: white;
+        }
+        
+        .footerComment1 li {
+            margin-bottom: 10px;
+        }
+        
+        .footerComment1 a {
+            word-spacing: 10px;
+            display: block;
+            text-align: left;
+            color: white;
+        }
+        
+        .headphoto img {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+        
+        .footerAssociate {
+            background: url("img/gl.png") no-repeat;
+            background-size: 24px 24px;
+            display: block;
+            width: 40%;
+            margin: 1rem 0 0 10%;
+            font-size: 14px;
+            line-height: 180%;
+            word-spacing: 2rem;
+            color: white;
+        }
+        
+        .footerSupport {
+            background: url("img/sup.png") no-repeat;
+            background-size: 24px 24px;
+            display: block;
+            width: 40%;
+            margin: 1rem 0 0 1%;
+            font-size: 14px;
+            line-height: 180%;
+            word-spacing: 2rem;
+            color: white;
+        }
+        
+        .footerLine {
+            height: 1px;
+            width: 100%;
+            background-color: white;
+            margin-top: 1rem;
+            float: left;
+        }
+        
+        .footerAssociateUl {
+            width: 100%;
+            float: left;
+        }
+        
+        .footerAssociateUl li {
+            width: 100%;
+            margin: 1rem 0 0 0;
+            float: left;
+        }
+        
+        .footerAssociateUl li a {
+            text-align: left;
+            display: block;
+            color: white;
+            margin-left: 1.5rem;
+        }
+        
+        .footerPrompt {
+            width: 100%;
+            /* height: 8rem;*/
+            margin: 1rem 0 0 10%;
+            border-top: 1px dashed black;
+            border-bottom: 1px dashed black;
+        }
+        
+        .footerApp {
+            width: 100%;
+        }
+        
+        .footerAppTit {
+            background: url("img/app1.png") no-repeat;
+            background-size: 24px 24px;
+            display: block;
+            width: 100%;
+            height: 2rem;
+            margin: 1rem 0 0 10%;
+            font-size: 14px;
+            line-height: 180%;
+            word-spacing: 2rem;
+            color: white;
+        }
+        
+        .footerAppios {
+            width: 40%;
+            margin: 1rem 0 0 10%;
+        }
+        
+        .footerAppandroid {
+            width: 40%;
+            margin: 1rem 0 0 1%;
+        }
+        
+        .footerAppiosTit {
+            background: url("img/photo.png") no-repeat right;
+            background-size: 10px 18px;
+            background-position: right;
+            height: 2rem;
+            width: 90%;
+            font-size: 16px;
+            color: white;
+        }
+        
+        .footerAppandroidTit {
+            background: url("img/photo.png") no-repeat right;
+            background-size: 10px 18px;
+            background-position: right;
+            height: 2rem;
+            width: 90%;
+            font-size: 16px;
+            color: white;
+        }
+        
+        .footerBox {
+            width: 100%;
+            height: 6rem;
+            background-color: #444444;
+        }
+        
+        .footerBox span {
+            display: block;
+            float: left;
+            width: 40%;
+            margin: 1rem 0 0 10%;
+            color: white;
+        }
+        
+        .footerBox ul {
+            width: 40%;
+            margin: 1rem 0 0 0%;
+            box-sizing: border-box;
+        }
+        
+        .weibo {
+            width: 2rem;
+            height: 2rem;
+            background: url("img/weibo.png") no-repeat;
+            background-size: 2rem 2rem;
+            margin-right: 20%;
+        }
+        
+        .youku {
+            width: 2rem;
+            height: 2rem;
+            background: url("img/youku.png") no-repeat;
+            background-size: 2rem 2rem;
+            margin-right: 20%;
+        }
+        
+        .facebook {
+            width: 2rem;
+            height: 2rem;
+            background: url("img/facebook.png") no-repeat;
+            background-size: 2rem 2rem;
+        }
+        
+        .returnTop {
+            width: 61px;
+            height: 99px;
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            background: #0f0f0f;
+            display: none;
+            text-align: center;
+            color: yellow;
+            line-height: 30px;
+            z-index: 100000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="header" class="left">
+            <div class="log left"><img src="img/log.gif" alt=""></div>
+            <div class="menu right" id="menu">
+                <img src="img/menu.gif" alt="" id="menuSu">
+                <img src="img/xx.png" alt="" id="menuRe">
+            </div>
+
+
+            <div id="menu-content">
+                <ul id="menuUl">
+                    <li><input type="" name="" id="menuSearch" value="" placeholder="请输入关键字..">
+                        <img src="img/fdj.png" alt="" id="menuImg"></li>
+                    <li><a href="">首页</a></li>
+                    <li><a href="">专题集</a></li>
+                    <li><a href="">演讲集</a></li>
+                    <li><a href="">活动</a></li>
+                    <li><a href="">记录</a></li>
+                    <li><a href="">礼物</a></li>
+                    <li><a href="">关于</a></li>
+                    <li><a href="">登录/注册</a></li>
+                </ul>
+            </div>
+            <div id="banner">
+                <ul class="banImg">
+                    <li>
+                        <div class="banImgcon">
+                            <div class="headPic">
+                                <img src="img/tx11.jpg" alt="">
+
+                            </div>
+                            <h2>数据与城市正义</h2>
+                            <p>茅明睿</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banImgcon">
+                            <div class="headPic">
+                                <img src="img/tx2.jpg" alt="">
+
+                            </div>
+                            <h2>当古人遇到十二星座</h2>
+                            <p>马伯庸</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banImgcon">
+                            <div class="headPic">
+                                <img src="img/tx1.jpg" alt="">
+
+                            </div>
+                            <h2>进击的智人</h2>
+                            <p>袁硕</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banImgcon">
+                            <div class="headPic">
+                                <img src="img/tx4.jpg" alt="">
+
+                            </div>
+                            <h2>本故事纯属非虚构</h2>
+                            <p>陈晓楠</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banImgcon">
+                            <div class="headPic">
+                                <img src="img/tx5.jpg" alt="">
+
+                            </div>
+                            <h2>浊水溪三百年</h2>
+                            <p>张素玢</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banImgcon">
+
+                        </div>
+                    </li>
+                </ul>
+                <ul class="banList">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+            <div class="section left">
+                <div class="secTitle left">
+                    <h2>最新专题</h2>
+                </div>
+
+                <div class="secContent left">
+                    <ul class="secContentUl left">
+                        <li>
+                            <div class="secContentli left">
+                                <div class="secContentTit"></div>
+
+                            </div>
+                            <div class="secContentTit">
+                                <h2>茅明睿「数据与城市正义」</h2>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="secContentli left">
+
+                            </div>
+                            <div class="secContentTit">
+                                <h2>马伯庸「当古人遇到十二星座」</h2>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="secTitle1 left" id="secTitle1">
+                    <h2>听君一席话</h2>
+                    <p>电影是利用山河大地、桥梁湖泊、风雪雷雾所有的一切事物来呈现演员的表演，而永远不是仅仅拍演员的脸来表演，也不是说台词，也不是仅仅讲一个戏剧故事。</p>
+                    <span>—杨超</span>
+                </div>
+
+                <div class="secTitle left">
+                    <h2>最新演讲</h2>
+
+                </div>
+                <div class="newSpeech left">
+                    <ul>
+                        <li>
+                            <div><img src="img/t1.jpg" alt=""></div>
+                            <h2>数据与城市正义</h2>
+                        </li>
+                        <li>
+                            <div><img src="img/t2.jpg" alt=""></div>
+                            <h2>当古人遇到十二星座</h2>
+                        </li>
+                        <li>
+                            <div><img src="img/t3.jpg" alt=""></div>
+                            <h2>进击的智人</h2>
+                        </li>
+                        <li>
+                            <div><img src="img/t4.jpg" alt=""></div>
+                            <h2>本故事纯属非虚构</h2>
+                        </li>
+                        <li>
+                            <div><img src="img/t5.jpg" alt=""></div>
+                            <h2>浊水溪三百年</h2>
+                        </li>
+                        <li>
+                            <div><img src="img/t7.jpg" alt=""></div>
+                            <h2>三种爱和无数种电影</h2>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="footer left">
+                    <div class="footerComment left">
+                        <span class="footerCommentTit">&nbsp;最新评论</span>
+                        <div class="footerCommentLine"></div>
+                        <ul class="footerComment1">
+                            <li>
+                                <div class="headphoto left"><img src="img/headphoto.png" alt=""></div>
+                                <p>&nbsp;用户名</p>
+                                <a href="">&nbsp;留言内容</a>
+                            </li>
+                            <li>
+                                <div class="headphoto left"><img src="img/headphoto.png" alt=""></div>
+                                <p>&nbsp;用户名</p>
+                                <a href="">&nbsp;留言内容</a>
+                            </li>
+                            <li>
+                                <div class="headphoto left"><img src="img/headphoto.png" alt=""></div>
+                                <p>&nbsp;用户名</p>
+                                <a href="">&nbsp;留言内容</a>
+                            </li>
+                            <li>
+                                <div class="headphoto left"><img src="img/headphoto.png" alt=""></div>
+                                <p>&nbsp;用户名</p>
+                                <a href="">&nbsp;留言内容</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="left" style="width:100%;">
+                        <div class="footerAssociate left">
+                            <span class="footerAssociateTit left">&nbsp;一席@关联</span>
+                            <div class="footerLine left"></div>
+                            <ul class="footerAssociateUl left">
+                                <li><a href="">一席@优酷</a></li>
+                                <li><a href="">一席@微博</a></li>
+                                <li><a href="">一席@豆瓣</a></li>
+                                <li><a href="">一席@facebook</a></li>
+                                <li><a href="">一席@微信</a></li>
+                            </ul>
+                            <div class="footerPrompt left">
+                                <span>  请在微信中搜索公众号yixiclub关注我们。</br>
+                                谢谢。
+                            </span>
+                            </div>
+                        </div>
+
+                        <div class="footerSupport left">
+                            <span class="footerSupportTit left">&nbsp;支持</span>
+                            <div class="footerLine left"></div>
+                            <ul class="footerAssociateUl left">
+                                <li><a href="">常见问题</a></li>
+                                <li><a href="">活动时间表</a></li>
+                                <li><a href="">用户反馈</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="footerApp left">
+                        <span class="footerAppTit">&nbsp;app</span>
+                        <div class="footerCommentLine"></div>
+                        <div class="footerAppios left">
+                            <div class="footerAppiosTit left">
+                                for ios
+                            </div>
+                            <div><img src="img/Bitmap_ios.png" alt=""></div>
+                            <div><img src="img/app.png" alt=""></div>
+                        </div>
+                        <div class="footerAppandroid left">
+                            <div class="footerAppandroidTit left">for android</div>
+                            <div><img src="img/Bitmap_android.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="footerBox left">
+                        <span>&copy;2014 一席.京ICP备13001689号-1</span>
+                        <ul class="left">
+                            <li class="weibo left"></li>
+                            <li class="youku left"></li>
+                            <li class="facebook left"></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+    <div class="returnTop" id="returnTop">Top</div>
+
+
+
+
+</body>
+<script src="js/jquery.js"></script>
+<script src="../../swiper/js/swiper.min.js"></script>
+<script>
+    var box = document.getElementsByClassName("box");
+    var header = document.getElementById("header");
+    var menuContent = document.getElementById("menu-content");
+    var menuUl = document.getElementById("menuUl");
+    var menuLi = menuUl.getElementsByTagName("li");
+    var menuImg = document.getElementById("menuImg");
+    var banner = document.getElementById("banner");
+    var secContentLi = document.querySelectorAll(".secContentUl li");
+    var secTitle1 = document.getElementById("secTitle1");
+    var newSpeechLi = document.querySelectorAll(".newSpeech ul li");
+
+    console.log(secContentLi);
+    window.onresize = set;
+    set();
+
+    function set() {
+        var windowWidth = document.documentElement.clientWidth;
+        header.style.width = windowWidth;
+        header.style.height = windowWidth * (49 / 359) + "px";
+        var HeaderHeight = header.style.height;
+        menuContent.style.width = windowWidth + "px";
+        menuContent.style.height = windowWidth * (480 / 359) + "px";
+        menuContent.style.top = HeaderHeight;
+        var MenuHeight = menuContent.style.height;
+        menuLi[0].style.height = windowWidth * (66 / 359) + "px";
+        banner.style.height = windowWidth * (301 / 359) + "px";
+
+        secTitle1.style.width = windowWidth + "px";
+        secTitle1.style.height = windowWidth * (400 / 377) + "px";
+
+        for (var i = 1; i < menuLi.length - 1; i++) {
+            menuLi[i].style.height = windowWidth * (50 / 359) + "px";
+
+        }
+        for (var i = 0; i < secContentLi.length; i++) {
+            secContentLi[i].style.width = windowWidth + "px";
+            secContentLi[i].style.height = windowWidth * (211 / 377) + "px";
+        }
+
+
+    }
+
+
+    function Menu() {
+        var i = 1;
+        var menu = document.getElementById("menu");
+        var menuSu = document.getElementById("menuSu");
+        var menuRe = document.getElementById("menuRe");
+
+        menu.onclick = function() {
+            i++;
+            if (i % 2 == 0) {
+                menuSu.style.display = "none";
+                menuRe.style.display = "block";
+                $("#menu-content").slideDown(500);
+            } else {
+                menuSu.style.display = "block";
+                menuRe.style.display = "none";
+                $("#menu-content").slideUp(500);
+            }
+        }
+
+    }
+    Menu();
+
+
+    function baner() {
+        var carousel = document.getElementById('banner');
+        var imageLis = document.querySelectorAll("#banner .banImg li");
+        var deltaX, deltaY;
+        var banList = document.querySelectorAll(".banList li");
+
+
+        var prev = 4; //上一张
+        var idx = 0; //当前中间的图片
+        var next = 1; // 下一张
+        var windowWidth;
+
+        // 当你的设备，或窗口更改时
+        window.onresize = init;
+        init();
+
+        function init() {
+            // 屏幕的宽度
+            windowWidth = document.documentElement.clientWidth;
+            // 计算一下图片的宽度
+            // carousel.style.height = windowWidth * (705 / 1140) + "px";
+
+            // 设置li的默认位置
+            for (var i = 1; i < imageLis.length; i++) {
+                imageLis[i].style.webkitTransform = "translateX(" + windowWidth + "px)";
+
+
+            }
+
+
+            // 把默认的效果清除掉
+            imageLis[idx].style.transition = 'none';
+            imageLis[next].style.transition = 'none';
+            imageLis[prev].style.transition = 'none';
+
+            // 给当前这三张图片归位
+            imageLis[next].style.webkitTransform = "translateX(" + windowWidth + "px)";
+            imageLis[idx].style.webkitTransform = "translateX(0px)";
+            imageLis[prev].style.webkitTransform = "translateX(" + -windowWidth + "px)";
+        }
+
+
+
+
+        carousel.addEventListener('touchstart', touchStartHandler, false);
+        carousel.addEventListener('touchmove', touchMoveHandler, false);
+        carousel.addEventListener('touchend', touchEndHandler, false);
+
+
+        var startX;
+
+        function touchStartHandler(ev) {
+            // 阻止默认事件
+            ev.preventDefault();
+            // 如果是多根手指就不让他开始了
+            if (ev.touches.length > 1) {
+                return;
+            }
+
+            // console.log(ev)
+
+            // 记录起始位置
+            deltaX = ev.touches[0].clientX;
+            startX = ev.touches[0].clientX;
+            // console.log(deltaX, deltaY)
+
+
+            imageLis[idx].style.transition = 'none';
+            imageLis[next].style.transition = 'none';
+            imageLis[prev].style.transition = 'none';
+
+
+            imageLis[next].style.webkitTransform = "translateX(" + windowWidth + "px)";
+            imageLis[idx].style.webkitTransform = "translateX(0px)";
+            imageLis[prev].style.webkitTransform = "translateX(" + -windowWidth + "px)";
+
+        }
+
+
+        //  手指移动的时候
+        function touchMoveHandler(ev) {
+            // 阻止默认事件
+            ev.preventDefault();
+
+            // 移动的x坐标位置
+            var clientX = ev.touches[0].clientX;
+            // console.log(clientX)
+            // console.log(clientX, ev.changedTouches[0].clientX)
+
+            // 移动的距离
+            var moveLine = clientX - deltaX;
+            console.log(moveLine);
+            imageLis[idx].style.webkitTransform = "translateX(" + (moveLine) + "px)";
+            imageLis[next].style.webkitTransform = "translateX(" + (windowWidth + moveLine) + "px)";
+            imageLis[prev].style.webkitTransform = "translateX(" + (-windowWidth + moveLine) + "px)";
+        }
+        // 当手指抬起的时候
+        function touchEndHandler(ev) {
+            ev.preventDefault();
+            // console.log(ev)
+
+
+            // 手指滑动的距离
+            var distance = ev.changedTouches[0].clientX - startX
+            if (distance >= windowWidth / 2) {
+                console.log("像右滑动成功")
+
+                next = idx;
+                idx = prev;
+
+                prev--;
+                if (prev < 0) {
+                    prev = 4;
+                }
+
+                imageLis[idx].style.transition = "all 0.5s ease 0s";
+                imageLis[next].style.transition = "all 0.5s ease 0s";
+
+                imageLis[idx].style.webkitTransform = "translateX(0px)";
+                imageLis[next].style.webkitTransform = "translateX(" + windowWidth + "px)";
+
+            } else if (distance <= -windowWidth / 2) {
+                showNext()
+            } else {
+                console.log("滑动不成功")
+
+
+                imageLis[idx].style.transition = "all 0.5s ease 0s";
+                imageLis[prev].style.transition = "all 0.5s ease 0s";
+                imageLis[next].style.transition = "all 0.5s ease 0s";
+
+
+                imageLis[prev].style.webkitTransform = "translateX(" + -windowWidth + "px)";
+                imageLis[idx].style.webkitTransform = "translateX(0px)";
+                imageLis[next].style.webkitTransform = "translateX(" + windowWidth + "px)";
+            }
+
+        }
+
+        function showNext() {
+            prev = idx;
+            idx = next;
+            next++;
+
+            if (next > 4) {
+                next = 0;
+            }
+            console.log(prev)
+            for (i = 0; i < banList.length; i++) {
+                if (i == prev) {
+                    banList[i].style.background = "red";
+                } else {
+                    banList[i].style.background = "";
+                }
+            }
+
+
+
+
+            imageLis[next].style.transition = "none";
+            imageLis[next].style.webkitTransform = "translateX(" + windowWidth + "px)";;
+
+            imageLis[idx].style.transition = "all 0.5s ease 0s";
+            imageLis[prev].style.transition = "all 0.5s ease 0s";
+
+
+            imageLis[idx].style.webkitTransform = "translateX(0px)";
+            imageLis[prev].style.webkitTransform = "translateX(" + -windowWidth + "px)";
+
+            // console.log("像左滑动成功")
+        }
+
+        // var timer = setInterval(function() {
+        //     showNext();
+        // }, 3000)
+
+
+
+    }
+    baner();
+
+    function reTop() {
+        var toTop = document.getElementById("returnTop");
+        toTop.onclick = function() {
+            scrollAnimate(0, 1000);
+            // this.style.backgroundPosition = "-120px,0";
+        }
+
+        window.onscroll = function() {
+            var st = document.body.scrollTop ||
+
+                document.documentElement.scrollTop;
+            if (st > 500) {
+                toTop.style.display = "block";
+            } else {
+                toTop.style.display = "none";
+            }
+
+        }
+
+        function scrollAnimate(target, time) {
+            var frameNumber = 0; //帧编号
+            //start当前卷动值的位置，是起点；
+            var start = document.body.scrollTop ||
+
+                document.documentElement.scrollTop;
+            var distance = target - start;
+            var interval = 10;
+            var maxFrame = time / interval;
+            clearInterval(timer);
+            var timer = setInterval(function() {
+                frameNumber++;
+                if (frameNumber == maxFrame) {
+                    clearInterval(timer);
+                }
+                // t,b,c,d
+                // 第一个参数t代表当前帧编号
+                // 第二个参数b代表当前起始位置
+                // 第三个参数c代表当前变化量
+                // 第四个参数d代表当前总帧数
+
+
+                // document.body.scrollTop = document.documentElement.scrollTop = Tween.Expo.easeInOu
+
+                // t(frameNumber, start, distance, maxFrame);
+            }, interval)
+        }
+
+
+    }
+    reTop();
+</script>
+
+</html>
